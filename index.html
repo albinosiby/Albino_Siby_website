@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Albino Siby</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/57a7bc54ae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="" alt="" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#potfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm <span>Albino</span> <br> Siby from Kannur</h1>
+                <h4>Web/Mobile App Developer</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src="images/me.JPG" alt=" not found" >
+                </div>
+                <div class="about-col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm a passionate developer with expertise in web and mobile app development, working with Django, Flutter, and Firebase. I thrive on building scalable, high-performance applications that prioritize usability, security, and efficiency. My interest in AI-driven solutions drives me to explore how technology can streamline workflows and enhance user experiences.
+
+                        Beyond coding, I enjoy solving complex problems, experimenting with new technologies, and staying updated with the latest trends in software development. I believe in continuous learning and innovation, always looking for ways to improve my skills and create impactful solutions.</p>
+                    <div class="titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links "onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab"id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Programming Language</li>
+                            <li><span>Java</span><br>Programming Language</li>
+                            <li><span>C++</span><br>Programming Language</li>
+                            <li><span>HTML/CSS</span><br>Web Development</li>
+                            <li><span>UI/UX</span><br>Designing web/App interfaces</li>
+                            <li><span>Flutter</span><br>Mobile App Development</li>
+                            <li><span>Django</span><br>Web Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents " id="Education">
+                        <ul>
+                            <li><span>BTech</span><br> Computer Science and Engineering (2022-2025) <br> in Vimal Jyothi Engineering College <br> Kannur</li>
+                            <li><span>Plus Two</span><br> Computer Science (2020-2022) <br> in Sacred Heart HSS <br> Payyavoor ,Kannur </li>
+                            <li><span>SSLC</span><br> (2020) <br> in Fusco Senior Secondary School <br> Pooparamba ,Kannur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="potfolio">
+        <div class="container">
+            <h1 class="sub-title">My work</h1>
+            <div class="worklist">
+                <div class="work">
+                    <img src="images/image.png " alt="">
+                    <div class="layer">
+                        <h3>Ride Sharing App</h3>
+                        <p>This app connects people who need a ride with those offering one. You can post or find rides. It’s an easy and smart way to share rides and save money.</p>
+                        <a href="https://github.com/albinosiby/sahara"><i class="fa-solid fa-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/image2.png " alt="">
+                    <div class="layer">
+                        <h3>Bus Booking System</h3>
+                        <p>This Bus Booking System is a Java-based application that uses JDBC to connect to a database and manage bus reservations.</p>
+                        <a href="https://github.com/albinosiby/movie_suggest"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/image3.png " alt="">
+                    <div class="layer">
+                        <h3>Movie Recommendation System</h3>
+                        <p>This Movie Recommendation System is built using Python and machine learning to suggest movies based on user preferences.</p>
+                        <a href="https://github.com/albinosiby/movie_suggest"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/albinosiby" class="btn">See more</a>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+          <h1 class="sub-title">Contact Me</h1>
+          <div class="contact-row">
+            <div class="contact-col2">
+              <h3>Follow Me On</h3>
+              <p><i class="fa-regular fa-envelope"></i> albinosiby775@gmail.com</p>
+              <p><i class="fa-solid fa-phone"></i> +91 70345 92461</p>
+              <div class="social-links">
+                <a href="https://www.instagram.com/_.albin_0/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/albinosiby" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="http://www.linkedin.com/in/albino-siby-a2178721a" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+              <a href="images/Albino Siby Resume.pdf" download class="btn btn2">Download Resume</a>
+            </div>
+          </div>
+        </div>
+      
+        <div id="copyright">
+          <p>&copy; Albino Siby. All rights reserved.</p>
+          <p>Designed by Albino Siby</p>
+        </div>
+      </div>
+      
+    <Script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </Script>
+    <script>
+        
+        var sidemenu = document.getElementById("sidemenu");
+
+function openmenu() {
+    sidemenu.style.right = "0";
+
+    // Auto-close after 5 seconds
+    setTimeout(function () {
+        sidemenu.style.right = "-200px";
+    }, 5000);
+}
+
+function closemenu() {
+    sidemenu.style.right = "-200px";
+}
+    
+    </script>
+</body>
+</html>
