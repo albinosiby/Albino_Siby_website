@@ -12,11 +12,11 @@ for (const project of projects) {
 }
 const html = await readFile('index.html', 'utf8');
 for (const [, path] of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
-  if (!/^https?:/.test(path)) await access(path);
+  if (!/^(?:https?:|mailto:|tel:)/.test(path)) await access(path);
 }
 await rm('dist', {recursive: true, force: true});
 await mkdir('dist');
-for (const path of ['index.html', 'style.css', 'about.css', 'projects.css', 'projects.js', 'projects-data.js', 'images']) {
+for (const path of ['index.html', 'style.css', 'about.css', 'footer.css', 'projects.css', 'projects.js', 'projects-data.js', 'images']) {
   await cp(path, `dist/${path}`, {recursive: true});
 }
 console.log(`Static build complete: ${projects.length} projects; local assets and external URL formats validated.`);
