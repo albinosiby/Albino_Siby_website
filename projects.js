@@ -30,7 +30,7 @@
         <div class="project-copy">
           <div class="project-title-row"><h3><button data-project="${project.id}">${escape(project.name)}</button></h3>${project.featured ? '<span class="project-featured-label">Featured</span>' : ''}</div>
           <p>${escape(project.description)}</p>
-          ${project.technologies.length ? `<ul class="project-tags" aria-label="Technologies">${tags(project)}</ul>` : '<span class="project-content-note">Details to follow</span>'}
+          ${project.technologies.length ? `<ul class="project-tags" aria-label="Technologies">${tags(project)}</ul>` : (project.pending ? '<span class="project-content-note">Details to follow</span>' : '')}
           <div class="project-actions"><button class="project-detail-button" data-project="${project.id}">Explore project <span aria-hidden="true">→</span></button>${links(project)}</div>
         </div>
       </article>`).join('');

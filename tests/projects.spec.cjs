@@ -13,7 +13,7 @@ test('catalog renders real assets and filters by category', async ({page}) => {
   page.on('pageerror', error => errors.push(error.message));
   await expect(page.locator('.project-card')).toHaveCount(9);
   await expect(page.locator('.project-featured')).toHaveCount(4);
-  for (const [label, total] of [['Featured', 4], ['Commerce', 2], ['Platforms', 3], ['More projects', 4], ['All projects', 9]]) {
+  for (const [label, total] of [['Featured', 4], ['Commerce', 2], ['Platforms', 5], ['More projects', 2], ['All projects', 9]]) {
     await page.getByRole('button', {name: label, exact: true}).click();
     await expect(page.locator('.project-card')).toHaveCount(total);
     await expect(page.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-pressed', 'true');
@@ -42,7 +42,7 @@ test('details support keyboard, focus containment, Escape, and close button', as
   await page.locator('.project-visual[data-project="neram"]').click();
   await expect(dialog.getByRole('heading', {name: 'Neram', exact: true})).toBeVisible();
   await page.getByRole('button', {name: 'Close project details'}).click(); await expect(dialog).not.toBeVisible();
-  await page.getByRole('button', {name: 'CoachTasks', exact: true}).click();
+  await page.getByRole('button', {name: 'Finance Tracker', exact: true}).click();
   await expect(dialog).toContainText('have not been supplied yet');
   await expect(dialog.locator('a')).toHaveCount(0);
 });

@@ -54,10 +54,30 @@ window.portfolioProjects = [
     image: null, imageAlt: '', imageCaption: '',
     links: [{label: 'View source', url: 'https://github.com/albinosiby/school-project'}]
   },
+  {
+    id: 'coachtasks', name: 'CoachTasks', category: 'Platforms',
+    eyebrow: 'COACHING / COACH OS', monogram: 'CT', accent: 'lime',
+    description: 'A shared coaching workflow for training, nutrition, and daily progress.',
+    detail: 'Branded Coach OS, this product brings coaches and clients into separate workspaces. Coaches invite a roster, assign workouts and meal plans, schedule sessions, and manage chat. Clients follow their daily plan, log training and nutrition, and share progress with their coach.',
+    technologies: ['Next.js'],
+    highlights: ['Separate coach and client workspaces', 'Workout plans, meals, and progress logs', 'Session scheduling and coach-client chat'],
+    image: 'images/projects/coachtasks.png', imageAlt: 'Coach OS public homepage showing coach and client workspace previews',
+    imageCaption: 'Public Coach OS homepage · captured October 31, 2026',
+    links: [{label: 'Visit website', url: 'https://tatoscoachos.web.app/'}]
+  },
+  {
+    id: 'shortshifts', name: 'Shortshifts', category: 'Platforms',
+    eyebrow: 'LOCAL WORK / STAFFING', monogram: 'SS', accent: 'blue',
+    description: 'Connecting flexible workers with local shifts and hosts who need a hand.',
+    detail: 'ShortShifts connects workers looking for short local shifts with hosts filling staffing gaps. Its public product site describes shift discovery and posting, applicant review, direct coordination, attendance and completion records, and payout visibility for both sides.',
+    technologies: ['Next.js'],
+    highlights: ['Worker and host experiences', 'Shift details, applications, and coordination', 'Attendance, completion, and payout visibility'],
+    image: 'images/projects/shortshifts.png', imageAlt: 'ShortShifts public homepage introducing flexible local work and staffing',
+    imageCaption: 'Public ShortShifts homepage · captured October 31, 2026',
+    links: [{label: 'Visit website', url: 'https://shortshifts-eb044.web.app/'}]
+  },
   ...[
     ['finance-tracker', 'Finance Tracker', 'FT'],
-    ['coachtasks', 'CoachTasks', 'CT'],
-    ['shortshifts', 'Shortshifts', 'SS'],
     ['voxdivini', 'VoxDivini', 'VV']
   ].map(([id, name, monogram]) => ({
     id, name, monogram, category: 'More projects', eyebrow: 'PROJECT', accent: 'neutral',

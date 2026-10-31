@@ -23,11 +23,11 @@ The original site is a static HTML/CSS portfolio with inline navigation/tab scri
 | Neram | `albinosiby/neram`, README and committed `dist/` frontend | Screenshot of the committed web interface served locally; no live data or service availability invented |
 | School Platform | `albinosiby/school-project`, separate parent/teacher Flutter clients and modules for attendance, homework, marks, fees, timetables and messages | Omitted; design exports were not represented as product screenshots |
 | Finance Tracker | Requested name only; the accessible `fin-tracker` repository is empty and its mapping is unconfirmed | Omitted |
-| CoachTasks | Requested name only; no confirmed matching source found | Omitted |
-| Shortshifts | Requested name only; no confirmed matching source found | Omitted |
+| CoachTasks | Owner-provided `https://tatoscoachos.web.app/`; public Coach OS page describes coach/client workspaces for workouts, meals, progress, sessions and chat | Screenshot of the public homepage, October 31, 2026 |
+| Shortshifts | Owner-provided `https://shortshifts-eb044.web.app/`; public ShortShifts page describes worker/host shift discovery, coordination and payout visibility | Screenshot of the public homepage, October 31, 2026 |
 | VoxDivini | Requested name only; no confirmed matching source found | Omitted |
 
-Finance Tracker, CoachTasks, Shortshifts, and VoxDivini have clearly marked “details to follow” entries. No technology tags, descriptions of functionality, screenshots, metrics or external links were guessed for them. They need owner-supplied content before publication. TradeNest has no public link because its source repository is private and no public product URL was verified.
+Finance Tracker and VoxDivini have clearly marked “details to follow” entries. No technology tags, descriptions of functionality, screenshots, metrics or external links were guessed for them. They need owner-supplied content before publication. TradeNest has no public link because its source repository is private and no public product URL was verified.
 
 Screenshots are stored locally, so visiting the portfolio does not query the featured products. Shotify's screenshot was rendered from its public source through curl-backed browser interception to preserve the environment's configured CA/proxy trust; TLS verification remained enabled. Neram's screenshot shows the initial search screen, not a simulated search result.
 
@@ -60,3 +60,7 @@ The user story is: open Projects → filter the local catalog → open a project
 ## Release boundary
 
 No main-branch files were changed, no merge was performed, and no deployment was requested. Work is retained on the local `portfolio-redesign` branch. Per the owner’s follow-up, testing and preview remain local and the owner will handle Render. No remote push is performed. A live preview server and downloadable static preview are sufficient for review without updating production.
+
+## Confirmed project links update
+
+CoachTasks and Shortshifts now have owner-confirmed public website links, descriptions and highlights derived from those pages, and captured homepage screenshots in their detail dialogs. Both websites serve Next.js assets, which verify the website technology tag; no mobile framework or backend stack is inferred. Both pages were retrieved successfully over HTTPS. They now appear under Platforms; only Finance Tracker and VoxDivini remain under More projects. The original four featured projects remain unchanged. This update is local on `project-links-update` and has not been pushed or deployed.
