@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="about.css">
     <script defer src="projects-data.js"></script>
     <script defer src="projects.js"></script>
     <script src="https://kit.fontawesome.com/57a7bc54ae.js" crossorigin="anonymous"></script>
@@ -34,49 +35,58 @@
         </div>
     </div>
 
-    <div id="about">
+    <section id="about" aria-labelledby="about-title">
         <div class="container">
-            <div class="row">
-                <div class="about-col1">
-                    <img src="images/me.JPG" alt="Albino Siby">
-                </div>
-                <div class="about-col2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I'm a passionate developer with expertise in web and mobile app development, working with Django, Flutter, and Firebase. I have 1 year of hands-on experience as a Software Development Engineer Intern at Tatos Technologies. I thrive on building scalable, high-performance applications that prioritize usability, security, and efficiency. My interest in AI-driven solutions drives me to explore how technology can streamline workflows and enhance user experiences.
-
-                        Beyond coding, I enjoy solving complex problems, experimenting with new technologies, and staying updated with the latest trends in software development. I believe in continuous learning and innovation, always looking for ways to improve my skills and create impactful solutions.</p>
-                    <div class="titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+            <div class="about-intro">
+                <figure class="about-portrait">
+                    <div class="about-photo">
+                        <img src="images/me.JPG" alt="Albino Siby wearing a black suit" width="898" height="1024" loading="lazy">
+                        <span class="about-photo-signature" aria-hidden="true">Albino Siby.</span>
                     </div>
-                    <div class="tab-contents active-tab"id="skills">
-                        <ul>
-                            <li><span>Python</span><br>Programming Language</li>
-                            <li><span>Java</span><br>Programming Language</li>
-                            <li><span>C++</span><br>Programming Language</li>
-                            <li><span>HTML/CSS</span><br>Web Development</li>
-                            <li><span>UI/UX</span><br>Designing web/App interfaces</li>
-                            <li><span>Flutter</span><br>Mobile App Development</li>
-                            <li><span>Django</span><br>Web Development</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Software Development Engineer Intern</span><br> Tatos Technologies <br> 1 year of hands-on experience</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents " id="Education">
-                        <ul>
-                            <li><span>BTech</span><br> Computer Science and Engineering (2022-2026) — Completed <br> in Vimal Jyothi Engineering College <br> Kannur</li>
-                            <li><span>Plus Two</span><br> Computer Science (2020-2022) <br> in Sacred Heart HSS <br> Payyavoor ,Kannur </li>
-                            <li><span>SSLC</span><br> (2020) <br> in Fusco Senior Secondary School <br> Pooparamba ,Kannur</li>
-                        </ul>
+                    <figcaption class="about-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Based in Kannur, Kerala</figcaption>
+                </figure>
+                <div class="about-story">
+                    <p class="about-eyebrow">ABOUT ME / THE PERSON BEHIND THE WORK</p>
+                    <h2 id="about-title">Curious by nature.<br><em>Developer by craft.</em></h2>
+                    <p class="about-role">Software Development Engineer</p>
+                    <p class="about-bio">I’m Albino, a web and mobile developer from Kannur. I work with Flutter, Django, and Firebase to turn ideas into practical applications, with usability, security, and efficiency at the heart of the process.</p>
+                    <p class="about-bio">My experience includes a year as a Software Development Engineer Intern at Tatos Technologies and a completed BTech in Computer Science and Engineering. Beyond coding, I enjoy solving problems, exploring AI-driven solutions, and learning what makes a better product.</p>
+                    <div class="about-links">
+                        <a class="about-link about-link-primary" href="#potfolio">Explore my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+                        <a class="about-link" href="images/AlbinoSibyResume.pdf" download>Download résumé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg></a>
                     </div>
                 </div>
             </div>
+            <div class="about-details">
+                <article class="about-card">
+                    <div class="about-card-heading"><h3>My toolkit</h3><span aria-hidden="true">01 / SKILLS</span></div>
+                    <div class="about-skill-group"><h4>Web &amp; mobile</h4><ul class="about-skills"><li>Flutter</li><li>Django</li><li>Firebase</li><li>HTML / CSS</li></ul></div>
+                    <div class="about-skill-group"><h4>Languages</h4><ul class="about-skills"><li>Python</li><li>Java</li><li>C++</li></ul></div>
+                    <div class="about-skill-group"><h4>Design</h4><ul class="about-skills"><li>UI / UX</li></ul></div>
+                </article>
+                <article class="about-card">
+                    <div class="about-card-heading"><h3>Hands-on experience</h3><span aria-hidden="true">02 / WORK</span></div>
+                    <h4 class="about-org">Tatos Technologies</h4>
+                    <p class="about-position">Software Development<br>Engineer Intern</p>
+                    <span class="about-duration">1 year of experience</span>
+                    <p class="about-card-note">Bringing a focus on usability, security, and efficiency to web and mobile development.</p>
+                </article>
+                <article class="about-card">
+                    <div class="about-card-heading"><h3>Learning &amp; foundations</h3><span aria-hidden="true">03 / EDUCATION</span></div>
+                    <h4 class="about-org">BTech, Computer Science &amp; Engineering</h4>
+                    <p class="about-position">Vimal Jyothi Engineering College<br>Kannur · 2022–2026</p>
+                    <span class="about-duration">Completed</span>
+                    <details class="about-education">
+                        <summary>Earlier education</summary>
+                        <ul>
+                            <li><strong>Plus Two · Computer Science</strong>Sacred Heart HSS, Payyavoor, Kannur<br>2020–2022</li>
+                            <li><strong>SSLC</strong>Fusco Senior Secondary School, Pooparamba, Kannur<br>2020</li>
+                        </ul>
+                    </details>
+                </article>
+            </div>
         </div>
-    </div>
+    </section>
     <section id="potfolio" aria-labelledby="projects-title">
         <div class="container">
             <p class="projects-eyebrow">SELECTED WORK / ALBINO SIBY</p>
@@ -138,20 +148,7 @@
         </div>
       </div>
       
-    <Script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </Script>
+
     <script>
         
         var sidemenu = document.getElementById("sidemenu");

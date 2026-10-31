@@ -16,7 +16,7 @@ for (const [, path] of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
 }
 await rm('dist', {recursive: true, force: true});
 await mkdir('dist');
-for (const path of ['index.html', 'style.css', 'projects.css', 'projects.js', 'projects-data.js', 'images']) {
+for (const path of ['index.html', 'style.css', 'about.css', 'projects.css', 'projects.js', 'projects-data.js', 'images']) {
   await cp(path, `dist/${path}`, {recursive: true});
 }
 console.log(`Static build complete: ${projects.length} projects; local assets and external URL formats validated.`);
