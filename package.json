@@ -1,0 +1,17 @@
+{
+  "name": "albino-siby-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "build": "node scripts/build.mjs",
+    "lint": "eslint projects.js projects-data.js scripts tests playwright.config.cjs && stylelint projects.css",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "eslint": "10.14.0",
+    "stylelint": "17.16.0"
+  }
+}

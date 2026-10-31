@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <script defer src="projects-data.js"></script>
+    <script defer src="projects.js"></script>
     <script src="https://kit.fontawesome.com/57a7bc54ae.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -74,39 +77,43 @@
             </div>
         </div>
     </div>
-    <div id="potfolio">
+    <section id="potfolio" aria-labelledby="projects-title">
         <div class="container">
-            <h1 class="sub-title">My work</h1>
-            <div class="worklist">
-                <div class="work">
-                    <img src="images/image.png " alt="">
-                    <div class="layer">
-                        <h3>Ride Sharing App</h3>
-                        <p>This app connects people who need a ride with those offering one. You can post or find rides. It’s an easy and smart way to share rides and save money.</p>
-                        <a href="https://github.com/albinosiby/sahara"><i class="fa-solid fa-up-right-from-square"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/image2.png " alt="">
-                    <div class="layer">
-                        <h3>Bus Booking System</h3>
-                        <p>This Bus Booking System is a Java-based application that uses JDBC to connect to a database and manage bus reservations.</p>
-                        <a href="https://github.com/albinosiby/movie_suggest"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/image3.png " alt="">
-                    <div class="layer">
-                        <h3>Movie Recommendation System</h3>
-                        <p>This Movie Recommendation System is built using Python and machine learning to suggest movies based on user preferences.</p>
-                        <a href="https://github.com/albinosiby/movie_suggest"><i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
+            <p class="projects-eyebrow">SELECTED WORK / ALBINO SIBY</p>
+            <div class="projects-heading">
+                <h2 id="projects-title">Ideas into<br><em>real experiences.</em></h2>
+                <p>A selection of platforms, products, and explorations. Built with care, from the first interaction to the everyday details.</p>
             </div>
-            <a href="https://github.com/albinosiby" class="btn">See more</a>
+            <div class="projects-toolbar">
+                <div class="projects-filters" role="group" aria-label="Filter projects">
+                    <button type="button" data-project-filter="All projects" aria-pressed="true">All projects</button>
+                    <button type="button" data-project-filter="Featured" aria-pressed="false">Featured</button>
+                    <button type="button" data-project-filter="Commerce" aria-pressed="false">Commerce</button>
+                    <button type="button" data-project-filter="Platforms" aria-pressed="false">Platforms</button>
+                    <button type="button" data-project-filter="More projects" aria-pressed="false">More projects</button>
+                </div>
+                <p id="projects-count" role="status" aria-live="polite"></p>
+            </div>
+            <div class="projects-grid" id="projects-grid"></div>
+            <noscript><p>Selected projects: Booking OS, Shotify.store, TradeNest, Neram, School Platform, Finance Tracker, CoachTasks, Shortshifts, and VoxDivini. Enable JavaScript to filter projects and explore details.</p><p><a href="https://shotify.store">Visit Shotify.store</a> · <a href="https://github.com/albinosiby/booking">Booking OS source</a> · <a href="https://github.com/albinosiby/neram">Neram source</a></p></noscript>
+            <div class="projects-footer">
+                <p>Have something in mind? Let’s build it together.</p>
+                <a class="project-link" href="#contact">Get in touch <span aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span></a>
+            </div>
+            <details class="projects-archive">
+                <summary>Earlier explorations</summary>
+                <ul>
+                    <li><a href="https://github.com/albinosiby/sahara" target="_blank" rel="noopener noreferrer"><img src="images/image.png" alt="" loading="lazy">Ride Sharing App <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></li>
+                    <li><a href="https://github.com/albinosiby/bus_ticket_JDBC" target="_blank" rel="noopener noreferrer"><img src="images/image2.png" alt="" loading="lazy">Bus Booking System <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></li>
+                    <li><a href="https://github.com/albinosiby/movie_suggest" target="_blank" rel="noopener noreferrer"><img src="images/image3.png" alt="" loading="lazy">Movie Recommendation System <svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></li>
+                </ul>
+            </details>
         </div>
-    </div>
+    </section>
+    <dialog class="project-dialog" id="project-dialog" aria-labelledby="project-dialog-title">
+        <button type="button" class="project-dialog-close" id="project-dialog-close" aria-label="Close project details" autofocus>×</button>
+        <div id="project-detail"></div>
+    </dialog>
     <div id="contact">
         <div class="container">
           <h1 class="sub-title"></h1>
