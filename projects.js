@@ -21,14 +21,20 @@
   function render(filter = 'All projects') {
     const visible = projects.filter(project => filter === 'All projects' || (filter === 'Featured' ? project.featured : project.category === filter));
     grid.innerHTML = visible.map(project => `
-      <article class="project-card ${project.featured ? 'project-featured' : 'project-compact'} project-${project.accent}">
-        ${project.featured ? `<button class="project-visual" data-project="${project.id}" aria-label="Explore ${escape(project.name)}: ${escape(project.eyebrow)}">
-          <span class="project-visual-label">${escape(project.eyebrow)}</span>
-          <img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000">
-          <span class="project-open" aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
-        </button>` : `<div class="project-mini-mark" aria-hidden="true">${escape(project.monogram)}</div>`}
+      <article class="project-card ${project.featured ? 'project-featured' : 'project-compact'} project-${project.accent}" data-project-id="${project.id}">
+        ${project.featured ? `<div class="project-stage">
+          <div class="project-stage-meta"><span class="project-visual-label">${escape(project.eyebrow)}</span><span class="project-featured-label"><span aria-hidden="true">✦</span> Featured</span></div>
+          <button class="project-visual" data-project="${project.id}" aria-label="Explore ${escape(project.name)}">
+            <span class="project-screen">
+              <span class="project-screen-bar"><span class="project-screen-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>${escape(project.name)}</span><span class="project-screen-line" aria-hidden="true"></span></span>
+              <img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000">
+            </span>
+            <span class="project-open" aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
+          </button>
+        </div>` : (project.image ? `<button class="project-thumbnail" data-project="${project.id}" aria-label="Preview ${escape(project.name)}"><img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000"><span aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>` : `<div class="project-mini-mark" aria-hidden="true">${escape(project.monogram)}</div>`)}
         <div class="project-copy">
-          <div class="project-title-row"><h3><button data-project="${project.id}">${escape(project.name)}</button></h3>${project.featured ? '<span class="project-featured-label">Featured</span>' : ''}</div>
+          <div class="project-meta"><span>${escape(project.category)}</span><span class="project-index" aria-hidden="true">${String(projects.indexOf(project) + 1).padStart(2, '0')} /</span></div>
+          <div class="project-title-row"><h3><button data-project="${project.id}">${escape(project.name)}</button></h3></div>
           <p>${escape(project.description)}</p>
           ${project.technologies.length ? `<ul class="project-tags" aria-label="Technologies">${tags(project)}</ul>` : (project.pending ? '<span class="project-content-note">Details to follow</span>' : '')}
           <div class="project-actions"><button class="project-detail-button" data-project="${project.id}">Explore project <span aria-hidden="true">→</span></button>${links(project)}</div>
