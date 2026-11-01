@@ -1,0 +1,11 @@
+/* A shared decorative backdrop starts after the hero and ends with the footer. */
+.portfolio-body { position: relative; isolation: isolate; background: #0b0b0d; }
+.portfolio-watermark { position: sticky; top: 0; height: 100svh; margin-bottom: -100svh; display: flex; align-items: center; justify-content: center; overflow: hidden; z-index: 0; pointer-events: none; user-select: none; }
+.portfolio-watermark span { display: block; padding-inline: 3vw; font-size: clamp(45px, 11.2vw, 178px); font-weight: 600; letter-spacing: -.065em; line-height: 1; color: #ffffff09; white-space: nowrap; }
+.portfolio-sections { position: relative; z-index: 1; }
+.portfolio-body #about { background: radial-gradient(ellipse at 100% 15%, #ff004f0a, transparent 55%); }
+.portfolio-body #potfolio { background: radial-gradient(ellipse at 0 0, #ff004f0b, transparent 48%); }
+.portfolio-body #contact.site-footer { background: radial-gradient(ellipse at 0 0, #ff004f0a, transparent 55%); }
+@media print {
+  .portfolio-watermark { display: none; }
+}

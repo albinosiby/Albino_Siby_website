@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "python3 -m http.server 4173",
     "build": "node scripts/build.mjs",
-    "lint": "eslint projects.js projects-data.js scripts tests playwright.config.cjs && stylelint projects.css about.css footer.css",
+    "lint": "eslint projects.js projects-data.js scripts tests playwright.config.cjs && stylelint projects.css about.css footer.css background.css",
     "test": "playwright test"
   },
   "devDependencies": {
