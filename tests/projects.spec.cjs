@@ -13,6 +13,10 @@ test('catalog renders real assets and filters by category', async ({page}) => {
   page.on('pageerror', error => errors.push(error.message));
   await expect(page.locator('.project-card')).toHaveCount(9);
   await expect(page.locator('.project-featured')).toHaveCount(4);
+  await expect(page.locator('.project-card .project-visual')).toHaveCount(9);
+  await expect(page.locator('.project-placeholder')).toHaveCount(3);
+  const previewHeights = await page.locator('.project-visual').evaluateAll(items => items.map(item => item.getBoundingClientRect().height));
+  expect(Math.max(...previewHeights) - Math.min(...previewHeights)).toBeLessThan(1);
   for (const [label, total] of [['Featured', 4], ['Commerce', 2], ['Platforms', 5], ['More projects', 2], ['All projects', 9]]) {
     await page.getByRole('button', {name: label, exact: true}).click();
     await expect(page.locator('.project-card')).toHaveCount(total);

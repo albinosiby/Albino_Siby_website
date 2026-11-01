@@ -21,17 +21,17 @@
   function render(filter = 'All projects') {
     const visible = projects.filter(project => filter === 'All projects' || (filter === 'Featured' ? project.featured : project.category === filter));
     grid.innerHTML = visible.map(project => `
-      <article class="project-card ${project.featured ? 'project-featured' : 'project-compact'} project-${project.accent}" data-project-id="${project.id}">
-        ${project.featured ? `<div class="project-stage">
-          <div class="project-stage-meta"><span class="project-visual-label">${escape(project.eyebrow)}</span><span class="project-featured-label"><span aria-hidden="true">✦</span> Featured</span></div>
-          <button class="project-visual" data-project="${project.id}" aria-label="Explore ${escape(project.name)}">
+      <article class="project-card ${project.featured ? 'project-featured ' : ''}project-${project.accent}" data-project-id="${project.id}">
+        <div class="project-stage">
+          <div class="project-stage-meta"><span class="project-visual-label">${escape(project.eyebrow)}</span>${project.featured ? '<span class="project-featured-label"><span aria-hidden="true">✦</span> Featured</span>' : ''}</div>
+          <button class="project-visual" data-project="${project.id}" aria-label="Explore ${escape(project.name)}${project.image ? '' : ': Preview coming soon'}">
             <span class="project-screen">
               <span class="project-screen-bar"><span class="project-screen-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>${escape(project.name)}</span><span class="project-screen-line" aria-hidden="true"></span></span>
-              <img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000">
+              ${project.image ? `<img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000">` : '<span class="project-placeholder"><svg viewBox="0 0 80 64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="9" y="8" width="62" height="48" rx="7"/><path d="M9 21h62M28 33l-8 6 8 6m24-12 8 6-8 6m-9-15-6 18"/><circle cx="17" cy="15" r="1"/><circle cx="23" cy="15" r="1"/></svg><span>Preview coming soon</span></span>'}
             </span>
             <span class="project-open" aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg></span>
           </button>
-        </div>` : (project.image ? `<button class="project-thumbnail" data-project="${project.id}" aria-label="Preview ${escape(project.name)}"><img src="${project.image}" alt="${escape(project.imageAlt)}" loading="lazy" width="1440" height="1000"><span aria-hidden="true"><svg class="project-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg></span></button>` : `<div class="project-mini-mark" aria-hidden="true">${escape(project.monogram)}</div>`)}
+        </div>
         <div class="project-copy">
           <div class="project-meta"><span>${escape(project.category)}</span><span class="project-index" aria-hidden="true">${String(projects.indexOf(project) + 1).padStart(2, '0')} /</span></div>
           <div class="project-title-row"><h3><button data-project="${project.id}">${escape(project.name)}</button></h3></div>
