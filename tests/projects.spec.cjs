@@ -11,13 +11,15 @@ test.beforeEach(async ({page}) => {
 test('catalog renders real assets and filters by category', async ({page}) => {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  await expect(page.locator('.project-card')).toHaveCount(9);
+  await expect(page.locator('.project-card')).toHaveCount(7);
   await expect(page.locator('.project-featured')).toHaveCount(4);
-  await expect(page.locator('.project-card .project-visual')).toHaveCount(9);
-  await expect(page.locator('.project-placeholder')).toHaveCount(3);
+  await expect(page.locator('[data-project-id="finance-tracker"], [data-project-id="voxdivini"]')).toHaveCount(0);
+  await expect(page.getByRole('button', {name: 'More projects', exact: true})).toHaveCount(0);
+  await expect(page.locator('.project-card .project-visual')).toHaveCount(7);
+  await expect(page.locator('.project-placeholder')).toHaveCount(1);
   const previewHeights = await page.locator('.project-visual').evaluateAll(items => items.map(item => item.getBoundingClientRect().height));
   expect(Math.max(...previewHeights) - Math.min(...previewHeights)).toBeLessThan(1);
-  for (const [label, total] of [['Featured', 4], ['Commerce', 2], ['Platforms', 5], ['More projects', 2], ['All projects', 9]]) {
+  for (const [label, total] of [['Featured', 4], ['Commerce', 2], ['Platforms', 5], ['All projects', 7]]) {
     await page.getByRole('button', {name: label, exact: true}).click();
     await expect(page.locator('.project-card')).toHaveCount(total);
     await expect(page.getByRole('button', {name: label, exact: true})).toHaveAttribute('aria-pressed', 'true');
@@ -46,9 +48,9 @@ test('details support keyboard, focus containment, Escape, and close button', as
   await page.locator('.project-visual[data-project="neram"]').click();
   await expect(dialog.getByRole('heading', {name: 'Neram', exact: true})).toBeVisible();
   await page.getByRole('button', {name: 'Close project details'}).click(); await expect(dialog).not.toBeVisible();
-  await page.getByRole('button', {name: 'Finance Tracker', exact: true}).click();
-  await expect(dialog).toContainText('have not been supplied yet');
-  await expect(dialog.locator('a')).toHaveCount(0);
+  await page.getByRole('button', {name: 'School Platform', exact: true}).click();
+  await expect(dialog).toContainText('Screenshot not yet available');
+  await expect(dialog.locator('a')).toHaveAttribute('href', 'https://github.com/albinosiby/school-project');
 });
 
 test('project section and open dialog pass accessibility checks', async ({page}) => {

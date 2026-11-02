@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 const catalog = {window: {}};
 vm.runInNewContext(await readFile('projects-data.js', 'utf8'), catalog);
 const projects = catalog.window.portfolioProjects;
-assert.equal(projects.length, 9);
+assert.equal(projects.length, 7);
 assert.equal(new Set(projects.map(project => project.id)).size, projects.length);
 for (const project of projects) {
   if (project.image) await access(project.image);

@@ -76,13 +76,4 @@ window.portfolioProjects = [
     imageCaption: 'Public ShortShifts homepage · captured October 31, 2026',
     links: [{label: 'Visit website', url: 'https://shortshifts-eb044.web.app/'}]
   },
-  ...[
-    ['finance-tracker', 'Finance Tracker', 'FT'],
-    ['voxdivini', 'VoxDivini', 'VV']
-  ].map(([id, name, monogram]) => ({
-    id, name, monogram, category: 'More projects', eyebrow: 'PROJECT', accent: 'neutral',
-    description: 'Project details to follow.',
-    detail: 'This project is included in the portfolio selection. A verified description, technology stack, screenshot, and public link have not been supplied yet.',
-    technologies: [], highlights: [], image: null, imageAlt: '', imageCaption: '', links: [], pending: true
-  }))
 ];
